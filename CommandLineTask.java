@@ -43,7 +43,7 @@ public class CommandLineTask {
 		System.out.println("min value:-"+arr[0]);
 		
 		System.out.println("max value:-"+arr[n-1]);
-		 // for even no of elements take middle 2 elements avg
+		
 			 
 	     
 	
