@@ -143,7 +143,7 @@ public class BookCricket {
 
 				player2turn++;
 				player2score = player2score + points;
-				if (player2score > player1score && rounds <= 12) {
+				if (player2score > player1score) {
 					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
 							+ "  Balls " + rounds);
 					System.out.println(player2 + " Wins The Match !!");
@@ -151,7 +151,7 @@ public class BookCricket {
 					break;
 				}
 
-				if (player2score < player1score && rounds <= 12) {
+				if (player2score < player1score) {
 					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
 							+ "  Balls " + rounds);
 
