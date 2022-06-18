@@ -32,21 +32,19 @@ public class CommandLineTask {
 		
 		System.out.println("Average of all elements:"+ average);
 		
-
-		 if (n % 2 != 0)
-			 System.out.println("Median:-"+arr[n/ 2]);  //if total elements are odd take middle value
-		 
-		 else    
-			 System.out.println("Median:-"+(arr[(n - 1) / 2] + arr[n/ 2]) / 2.0 );  
 		
 		Arrays.sort(arr);
 		System.out.println("min value:-"+arr[0]);
 		
 		System.out.println("max value:-"+arr[n-1]);
 		
-			 
-	     
-	
+		
+		 if (n % 2 != 0)
+			 System.out.println("Median:-"+arr[n/ 2]);  //if total elements are odd take middle value
+		 
+		 else    
+			 System.out.println("Median:-"+(arr[(n - 1) / 2] + arr[n/ 2]) / 2.0 );  
+		
 		 
 		visited =-1;
 		for(int i =0; i<n;i++) 
