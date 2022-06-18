@@ -151,7 +151,7 @@ public class BookCricket {
 					break;
 				}
 
-				if (player2score < player1score) {
+				else { // player2score < or == player 1 but rounds != 12
 					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
 							+ "  Balls " + rounds);
 
