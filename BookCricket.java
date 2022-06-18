@@ -56,7 +56,7 @@ public class BookCricket {
 				Scanner sc11 = new Scanner(System.in);
 				n = sc11.nextInt();
 
-				if (n != 1) {
+				while (n != 1) {
 					System.out.println("Input not 1 enter 1 ");
 					System.out.print("Press 1 to Open Book: ");
 
@@ -126,14 +126,14 @@ public class BookCricket {
 			points = a % 7;
 			rounds++;
 
-			if (points != 0 && player2score <= player1score && rounds <= 12) {
+			if (points != 0 && rounds <= 12) { // if points are not zero
 
 				System.out.print("Press 1 to Open Book: ");
 
 				Scanner sc = new Scanner(System.in);
 				n1 = sc.nextInt();
 
-				if (n1 != 1) {
+				while (n1 != 1) {
 					System.out.println("Game stopped as input not 1");
 					System.out.print("Press 1 to Open Book: ");
 
@@ -143,20 +143,31 @@ public class BookCricket {
 
 				player2turn++;
 				player2score = player2score + points;
-
-				System.out.println(
-						"Page Number: " + a + "  Points: " + points + "  score: " + player2score + "  Balls " + rounds);
-
-				if (player2score > player1score) {
-
+				if (player2score > player1score && rounds <= 12) {
+					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
+							+ "  Balls " + rounds);
 					System.out.println(player2 + " Wins The Match !!");
 					System.out.println(player2 + " Took Rounds :" + player2turn);
 					break;
+				}
+
+				if (player2score < player1score && rounds <= 12) {
+					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
+							+ "  Balls " + rounds);
 
 				}
+
+				if (player2score == player1score && rounds == 12) {
+
+					System.out.println(player2 + " !!!DRAW!!!");
+
+					break;
+
+				}
+
 			}
 
-			else {
+			else { // if points are 0
 
 				player2turn++;
 				player2score = player2score + points;
@@ -166,23 +177,25 @@ public class BookCricket {
 				Scanner sc = new Scanner(System.in);
 				n1 = sc.nextInt();
 
-				System.out.println(
-						"Page Number: " + a + "  Points: " + points + "  score: " + player2score + "  Balls " + rounds);
-
 				if (player2score < player1score && points == 0 && rounds <= 12) {
-
+					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
+							+ "  Balls " + rounds);
 					System.out.println(" OOPS              !!!           !!!        ");
 					System.out.println(player1 + " Wins the Game ");
 					break;
 				}
 				if (player2score > player1score && points == 0 && rounds <= 12) {
+					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
+							+ "  Balls " + rounds);
 					System.out.println(" OOPS              !!!           !!!        ");
 					System.out.println(player2 + " Wins the Game ");
 
 				}
 
-				if (player2score == player1score && points == 0) {
+				if (player2score == player1score && points == 0 && rounds <= 12) {
 
+					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
+							+ "  Balls " + rounds);
 					if (player2turn > player1turns) {
 						System.out.println(" * Game tied *");
 						System.out.println(player1 + " Wins the Game as he took less rounds");
@@ -200,6 +213,7 @@ public class BookCricket {
 					}
 
 				}
+
 			}
 
 		}
