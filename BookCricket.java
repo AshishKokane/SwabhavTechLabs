@@ -67,7 +67,7 @@ public class BookCricket {
 
 				int a = (int) (Math.random() * (300 - 0 + 1) + 0);
 
-				points = a % 17;
+				points = a % 7;
 
 				if (points != 0 && rounds <= 12) {
 					score = score + points;
@@ -123,7 +123,7 @@ public class BookCricket {
 
 			int a = (int) (Math.random() * (300 - 0 + 1) + 0);
 
-			points = a % 17;
+			points = a % 7;
 			rounds++;
 
 			if (points != 0 && rounds <= 12) { // if points are not zero
