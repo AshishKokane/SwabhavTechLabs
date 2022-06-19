@@ -67,7 +67,7 @@ public class BookCricket {
 
 				int a = (int) (Math.random() * (300 - 0 + 1) + 0);
 
-				points = a % 7;
+				points = a % 17;
 
 				if (points != 0 && rounds <= 12) {
 					score = score + points;
@@ -123,7 +123,7 @@ public class BookCricket {
 
 			int a = (int) (Math.random() * (300 - 0 + 1) + 0);
 
-			points = a % 7;
+			points = a % 17;
 			rounds++;
 
 			if (points != 0 && rounds <= 12) { // if points are not zero
@@ -151,10 +151,18 @@ public class BookCricket {
 					break;
 				}
 
-				else { // player2score < or == player 1 but rounds != 12
+				if (player2score < player1score && rounds != 12) {
 					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
 							+ "  Balls " + rounds);
 
+				}
+
+				if (player2score < player1score && rounds == 12) {
+					System.out.println("Page Number: " + a + "  Points: " + points + "  score: " + player2score
+							+ "  Balls " + rounds);
+					System.out.println(player1 + " Wins The Match !!");
+					System.out.println(player1 + " Took Rounds :" + player2turn);
+					break;
 				}
 
 				if (player2score == player1score && rounds == 12) {
