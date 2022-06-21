@@ -41,14 +41,13 @@ public class PigDice {
 					turnscore = dice + turnscore;
 
 					if (dice == 1) {
-						// System.out.println("Die: " + dice);
-						System.out.println("Turn Over. No Score");
 
+						System.out.println("Turn Over. No Score");
+						// turnscore=0;
 					}
 				}
 
 				else if (ch == 'h') {
-					// System.out.println("Die: " + dice);
 
 					sum = sum + turnscore;
 					System.out.println("Score For Turn : " + turnscore);
