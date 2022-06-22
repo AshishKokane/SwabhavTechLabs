@@ -7,13 +7,43 @@ public class PigDice {
 
 	public static void main(String[] args) {
 
-		int sum = 0, turn = 0, turnscore = 0;
-
 		System.out.println("PIG DICE GAME");
 		System.out.println("* See how many turns it takes you to get to 20");
 		System.out.println("* Turn ends when you hold or roll a 1");
 		System.out.println("* If you roll a 1, you lose all points for the turn");
 		System.out.println("* if you hold, you save all points for the turn");
+
+		System.out.println("Player 1 Turn Starts");
+
+		int Player1turns = playgame();
+
+		System.out.println("***************************");
+		System.out.println("***************************");
+		System.out.println("Player 2 Turn Starts");
+
+		int Player2turns = playgame();
+
+		if (Player1turns > Player2turns) {
+			System.out.println("***************************");
+			System.out.println("Player2 You Win !!");
+			System.out.println("You Took " + Player2turns + " Turns");
+		}
+
+		else {
+			System.out.println("***************************");
+			System.out.println("Player1 You Win !!");
+			System.out.println("You Took " + Player1turns + " Turns");
+		}
+
+		if (Player1turns == Player2turns) {
+			System.out.println("***************************");
+			System.out.println("!! DRAW!!");
+		}
+
+	}
+
+	private static int playgame() {
+		int sum = 0, turn = 0, turnscore = 0;
 
 		char ch;
 		int dice = 0;
@@ -63,10 +93,7 @@ public class PigDice {
 			}
 
 		}
-
-		System.out.println("\nYou finished in " + turn + " turns!");
-		System.out.println("\n You Wins");
-
+		return turn;
 	}
 
 }
